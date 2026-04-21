@@ -1,84 +1,70 @@
 # Galaxy Profile README Configuration
-# Copy this file to config.yml and customize it to make it your own!
-#
-# Usage:
-#   cp config.example.yml config.yml
-#   # Edit config.yml with your details
-#   python -m generator.main
-#
-# Demo mode (no API calls, uses this file directly):
-#   python -m generator.main --demo
+# Leonardo Vidal — @iAmNotLins
 
-# Your GitHub username (required)
 username: iAmNotLins
 
 # Profile information displayed in the galaxy header
 profile:
   name: "Leonardo Vidal"
-  tagline: "Futuro Devops Junior"
+  tagline: "DevOps Jr · Transição do Suporte"
   company: "Kirvano"
   location: "São Paulo, SP"
   bio: |
-    Estudando DevOps com foco em containers, automação e cloud
+    Atuando em CI/CD, containers e AWS.
+    Base em redes, suporte e governança de TI.
   philosophy: '"Automatize o que é repetitivo, monitore o que é crítico."'
 
 # Social links displayed at the bottom of the profile
 social:
   email: "leonardolinsvv17@gmail.com"
-  linkedin: "Leonardo Lins Vidal"
+  linkedin: "leonardolinsvidal"   # ajustar se o handle do LinkedIn for diferente
 
-# Galaxy arms represent your core focus areas
-# Each arm spirals out from the center with its own color and tech items
-# Available colors: "synapse_cyan", "dendrite_violet", "axon_amber"
+# Galaxy arms — três frentes de foco ativo
+# (removi Jenkins e Ansible: não estão no foco atual)
 galaxy_arms:
-  - name: "Containers & Orquestração"
+  - name: "Containers & Linux"
     color: "synapse_cyan"
     items:
       - "Docker"
-      - "Kubernetes"
       - "Linux"
+      - "Git"
 
   - name: "CI/CD & Automação"
     color: "axon_amber"
     items:
       - "GitHub Actions"
-      - "Jenkins"
-      - "Git"
+      - "Bash"
+      - "AWS"
 
   - name: "Cloud & IaC"
     color: "dendrite_violet"
     items:
       - "AWS"
       - "Terraform"
-      - "Ansible"
+      - "Cloudflare"
 
-# Featured projects shown as constellation stars
-# Each project needs:
-#   repo: "owner/repo-name"   — GitHub repository path
-#   arm: 0-2                  — Which galaxy arm to associate with (index)
-#   description: "..."        — Short description shown on the card
-# projects:
-#  - repo: "galaxy-dev/nebula-ui"
-#    arm: 0
-#    description: "A component library with cosmic design tokens and dark-first theming."
-#  - repo: "galaxy-dev/stargate-api"
-#    arm: 1
-#    description: "High-performance API gateway with built-in observability and caching."
+# Featured projects — só o metabase-deploy por ora.
+# Novos projetos entram aqui à medida que forem publicados.
+projects:
+  - repo: "iAmNotLins/metabase-deploy"
+    arm: 1  # CI/CD & Automação (também poderia ser 2 — Cloud & IaC)
+    description: "Deploy do Metabase em AWS com Docker, GitHub Actions e SSM. Acesso Zero Trust via Twingate."
 
-# Theme color overrides (optional — defaults to deep space palette)
-# All values must be valid hex color codes (#RRGGBB)
+# Tema (mantém o mesmo — está ótimo)
 theme:
-  void: "#080c14"              # Darkest background
-  nebula: "#0f1623"            # Card backgrounds
-  star_dust: "#1a2332"         # Borders, dividers
-  synapse_cyan: "#00d4ff"      # Primary accent (arm color 1)
-  dendrite_violet: "#a78bfa"   # Secondary accent (arm color 2)
-  axon_amber: "#ffb020"        # Tertiary accent (arm color 3)
-  text_bright: "#f1f5f9"       # Primary text
-  text_dim: "#94a3b8"          # Secondary text
-  text_faint: "#64748b"        # Muted text, labels
+  void: "#080c14"
+  nebula: "#0f1623"
+  star_dust: "#1a2332"
+  synapse_cyan: "#00d4ff"
+  dendrite_violet: "#a78bfa"
+  axon_amber: "#ffb020"
+  text_bright: "#f1f5f9"
+  text_dim: "#94a3b8"
+  text_faint: "#64748b"
 
-# Stats configuration — which metrics to show on the telemetry card
+# Stats configuration — mantido caso você queira reabilitar depois.
+# Hoje o workflow roda em --demo e os valores saem zero.
+# Por isso removemos o stats-card do README.profile.md por enquanto.
 stats:
   metrics:
     - "commits"
@@ -89,9 +75,9 @@ stats:
 
 # Language display settings
 languages:
-  exclude:                     # Languages to hide from the telemetry chart
+  exclude:
     - "HTML"
     - "CSS"
     - "Shell"
     - "Makefile"
-  max_display: 8               # Maximum number of languages to show
+  max_display: 8
